@@ -2,6 +2,7 @@ package pl.MR.apirekrutacyjne;
 
 import lombok.extern.log4j.Log4j;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -25,8 +26,9 @@ Format daty wejściowej serwisu jest dowolny.
         loadAndSetStartDate(scanner, parameters);
 
         NBPApi api = new NBPApi();
-        api.requestBidAskRates(parameters);
-//
+        List<Rate> rates = api.requestBidAskRates(parameters);
+        rates.stream().forEach(log::info);
+
     }
 
     private static void loadAndSetEndDate(Scanner scanner, NBPApiParameters parameters) {
@@ -39,6 +41,7 @@ Format daty wejściowej serwisu jest dowolny.
             }
         } while (parameters.getEndDate() == null);
     }
+
 
     private static void loadAndSetStartDate(Scanner scanner, NBPApiParameters parameters) {
         do {
@@ -58,16 +61,11 @@ Format daty wejściowej serwisu jest dowolny.
             Optional<NBPCurrency> optionalCurrency = NBPCurrency.parse(scanner.nextLine());
             if (optionalCurrency.isPresent()) {
                 parameters.setCurrency(optionalCurrency.get());
+            } else {
+                log.error("Error: inrecognized currency, type again");
             }
-            else {log.error("Error: inrecognized currency, type again");}
         } while (parameters.getCurrency() == null); // wykonuj pętle, dopóki currency == null
     }
-
-
-
-
-
-
 
 
 }

@@ -1,4 +1,12 @@
 package pl.MR.apirekrutacyjne;
 
-public class Rates {
+import lombok.Data;
+
+@Data
+public class Rate {
+
+    private String no;
+    private String effectiveDate;
+    private Double bid;
+    private Double ask;
 }

@@ -1,10 +1,14 @@
 package pl.MR.apirekrutacyjne;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.util.ArrayList;
+import java.util.List;
 
 public class NBPApi {
 
@@ -15,7 +19,10 @@ public class NBPApi {
             .build();
 
 
-    public void requestBidAskRates(NBPApiParameters parameters) {
+    private final ObjectMapper objectMapper = new ObjectMapper();
+
+
+    public List<Rate> requestBidAskRates(NBPApiParameters parameters) {
         String requestURl = prepareRequestURL(parameters);
         System.out.println("Request URL:" + requestURl);
 
@@ -33,6 +40,11 @@ public class NBPApi {
             // jeśli zapytanie sie powiedzie
             if (response.statusCode() == 200) {
                 System.out.println("Response:" + response.body());
+
+                String responseBody = response.body();
+                ExchangeRates exchangeRates = objectMapper.readValue(responseBody, ExchangeRates.class);
+                return exchangeRates.getRates();
+
             } else {
                 System.err.println("Error:" + response.statusCode());
             }
@@ -42,7 +54,10 @@ public class NBPApi {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-            }
+
+
+        return new ArrayList<>(); // błąd
+    }
 
 
     private String prepareRequestURL(NBPApiParameters parameters) {

@@ -1,0 +1,18 @@
+2020-07-04 13:59:19,423[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
+2020-07-04 14:00:17,045[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter end date [yyyy-MM-dd]:
+2020-07-04 14:00:25,425[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter start date [yyyy-MM-dd]:
+2020-07-04 14:01:01,420[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
+2020-07-04 14:01:05,486[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter end date [yyyy-MM-dd]:
+2020-07-04 14:01:11,078[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter start date [yyyy-MM-dd]:
+2020-07-04 14:16:10,526[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
+2020-07-04 14:16:17,336[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter end date [yyyy-MM-dd]:
+2020-07-04 14:16:29,237[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter start date [yyyy-MM-dd]:
+2020-07-04 14:17:43,218[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
+2020-07-04 14:17:46,652[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter end date [yyyy-MM-dd]:
+2020-07-04 14:17:50,907[main] ERROR pl.MR.apirekrutacyjne.DateTimeUtilities  - Błąd parsowania daty.
+2020-07-04 14:17:50,912[main] ERROR pl.MR.apirekrutacyjne.Main  - Wrong date: End date should be no later than yesterday.
+2020-07-04 14:17:50,912[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter end date [yyyy-MM-dd]:
+2020-07-04 14:17:58,890[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter start date [yyyy-MM-dd]:
+2020-07-04 14:41:14,822[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
+2020-07-04 14:43:15,681[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
+2020-07-04 14:48:00,935[main] INFO  pl.MR.apirekrutacyjne.Main  - Please enter currency [dolar,euro,rubel]:
