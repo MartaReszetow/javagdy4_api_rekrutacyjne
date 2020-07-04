@@ -1,15 +1,25 @@
 package pl.MR.apirekrutacyjne;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.time.LocalDate;
-@Data
+
 @AllArgsConstructor
 @NoArgsConstructor
-public class NBPApiParametrs {
+@Getter
+class NBPApiParameters {
     private LocalDate startDate;
     private LocalDate endDate;
+
+    @Setter
     private NBPCurrency currency;
+
+    public void setEndDate(String userInput) throws DateTimeParsingException {
+        this.endDate = DateTimeUtilities.loadEndDate(userInput);
+    }
+
+    public void setStartDate(String userInput) throws DateTimeParsingException  {
+        this.startDate = DateTimeUtilities.loadStartDate(userInput, endDate);
+    }
+
 }

@@ -1,4 +1,7 @@
 package pl.MR.apirekrutacyjne;
 
-public class DateTimeParsingException {
+public class DateTimeParsingException extends Exception{
+    public DateTimeParsingException(String message) {
+        super(message);
+    }
 }
